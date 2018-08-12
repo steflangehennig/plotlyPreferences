@@ -1,4 +1,4 @@
-setwd("C:/Users/stefa/Dropbox/Dissertation/Data/Budget & Appropriations/Appropriations")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 data <- read.csv(file = "approp bills info - for analysis 052118.csv")
 theme_set(theme_classic()) ## can turn this off to get gray background/grid

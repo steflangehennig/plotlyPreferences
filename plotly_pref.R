@@ -4,19 +4,13 @@ data <- read.csv(file = "approp bills info - for analysis 052118.csv")
 theme_set(theme_classic()) ## can turn this off to get gray background/grid
 theme_set(theme_bw())
 
-library(plotly)
-library(magrittr)
+library(plotly, magrittr)
 install.packages('plotly', dependencies = TRUE)
-#install.packages('shiny', repos=c("http://rstudio.org/_packages", "http://cran.rstudio.com",dependencies=TRUE))
-install.packages("shiny", type="binary")
-#update.packages("shiny")
-#install.packages(c("sourcetools", "shiny"))
 library(shiny)
 
-Sys.setenv("plotly_username"="stefanilangehennig")
-Sys.setenv("plotly_api_key"="YcBwzMwH1UovWJHG02KI")
+### set sytem environment w/ username and api key ###
 
-# for ag over time
+## for ag over time
 
 data2 <- data[which(data$aw_coding=='agriculture'), ]
 
@@ -117,7 +111,7 @@ sub1 <- subplot(p, p2, p3, p2, nrows = 2, margin = 0.05)
 sub1
 
 #########################################
-# Panel plots
+# Panel plots w/ ggplot
 #########################################
 
 library(ggplot2)
